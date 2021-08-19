@@ -150,12 +150,56 @@ let arrlastNames = [
   "Baker",
 ];
 
+// Создать массив должностей
+
+const arrOfPositions = [
+  "Web designer",
+  "Imposer",
+  "Programmer",
+  "Software tester	",
+  "System administrator",
+  "Neural interface designer",
+  "Ios developer",
+  "Android developer",
+  "Database architect",
+  "Database developer",
+  "Network administrator",
+  "Game developer",
+  "Aystem engineer",
+  "Front-end developer",
+  "Business Analyst",
+  "Database Analyst",
+  "Data Analyst",
+  "Data Administrator",
+  "Data Scientist",
+  "Project Manager",
+  "Team Leader",
+  "CTO",
+  "CIO",
+  "CEO",
+  "Сryptographer",
+  "Support specialist",
+  "IT technician",
+  "UX designer",
+  "Web administrator",
+  "Help desk technician",
+  "IT coordinator",
+  "Cloud Architect",
+  "IT Analyst",
+  "IT Support Manager",
+  ".NET Developer",
+  "Python developer",
+  "C++ developer",
+  "JS developer",
+];
+
 const createObj = (howMany) => {
   let arrOfObj = [];
   for (let i = 0; i < howMany; i++) {
     arrOfObj.push({
       firstName: arrFirstNames[randInt(arrFirstNames.length)],
       lastName: arrlastNames[randInt(arrlastNames.length)],
+      position: arrOfPositions[randInt(arrOfPositions.length)],
       age: randInt(60),
     });
   }
