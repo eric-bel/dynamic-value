@@ -43,9 +43,9 @@ function makeArr(numOfObj) {
   
   // Сделать так, чтобы рандомные числовые значия свойств объектов являлись значением случайных индексов массива. 
   
-  let arr = ['Alex', 'John', 'April', 'Sarah', 'Elton', 'Jessica', 'Max'];
+  let arrOfNames0 = ['Alex', 'John', 'April', 'Sarah', 'Elton', 'Jessica', 'Max'];
   
-  let obj = {
+  let objRandom = {
       randomNames1: Math.floor(Math.random() * arr.length),
       randomNames2: Math.floor(Math.random() * arr.length)
   }
@@ -66,5 +66,4 @@ function makeArr(numOfObj) {
     return arrOfObj;
   }
   
-  createArrOfObj(6);
-  
+console.log(createArrOfObj(2))  
