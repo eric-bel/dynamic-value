@@ -1,18 +1,10 @@
 /* При каждом запуске Функции:
 1. Функция должна генерировать массив объектов, столько, сколько указано в параметрах. 
 2. У каждого объекта значения свойств должны генерироваться в случайном порядке.
-Например, если массив персон: разные имена, разные возраста,  разные должности. 
-___________________________________________________
-
-Разделение на подзадачи:
-+ Генерить в массиве столько объектов, сколько указано в параметрах;
-+ Создать переменную, значением которой будет рандомное число.
-+ Создать объект, свойство которого будут иметь рандомное число.
-+ Создать переменную, значением которой будеть являться значение случайного индекса массива.
-+ Сделать так, чтобы рандомное числовое значие свойства объекта являлось значением случайного индекса массива. 
+Например, если массив персон: разные имена и фамилии, разные возраста и разные должности. 
 */
 
-// Подзадачи
+// Разделение на подзадачи:
 
 // Генерить в массиве столько объектов, сколько указано в параметрах;
 
@@ -45,11 +37,11 @@ let randIndex = arr[Math.floor(Math.random() * arr.length)];
 let arrOfNames0 = ["Alex", "John", "April", "Sarah", "Elton", "Jessica", "Max"];
 
 let objRandom = {
-  randomNames1: Math.floor(Math.random() * arr.length),
-  randomNames2: Math.floor(Math.random() * arr.length),
+  randomNames1: arrOfNames0[Math.floor(Math.random() * arrOfNames0.length)],
+  randomNames2: arrOfNames0[Math.floor(Math.random() * arrOfNames0.length)],
 };
 
-//  Итог/Финал: сгенерировать массив объектов. Объекты должны ииметь рандомные значения.
+//  Итог/Финал: Сгенерировать массив объектов. Свойства объектов должны ииметь рандомные значения.
 
 let arrOfNames = ["Alex", "John", "April", "Sarah", "Elton", "Jessica", "Max"];
 let arrOfAges = [23, 54, 12, 32, 45, 65, 32, 21, 34];
@@ -71,11 +63,11 @@ function createArrOfObj(numOfObj) {
 
 // ПОСЛЕ РЕВЬЮ | AFTER THE REVIEW
 
-// Вынести в одельную функцию генерацию рандомного целого числа в диапазоне от 0 по N
+// вынести в одельную функцию генерацию рандомного целого числа в диапазоне от 0 по N
 
 const randInt = (howMany) => Math.floor(Math.random() * howMany);
 
-// Вынести в отдельную функцию создание обьекта
+// создать массив имён
 
 let arrFirstNames = [
   "Alex",
@@ -108,9 +100,9 @@ let arrFirstNames = [
   "Maximilian",
 ];
 
-// добавить фамилии
+// создать массив фамилий
 
-let arrlastNames = [
+let arrLastNames = [
   "Smith",
   "Johnson",
   "Williams",
@@ -150,13 +142,13 @@ let arrlastNames = [
   "Baker",
 ];
 
-// Создать массив должностей
+// создать массив должностей
 
 const arrOfPositions = [
   "Web designer",
   "Imposer",
   "Programmer",
-  "Software tester	",
+  "Software tester",
   "System administrator",
   "Neural interface designer",
   "Ios developer",
@@ -193,23 +185,27 @@ const arrOfPositions = [
   "JS developer",
 ];
 
+// вынести в отдельную функцию создание обьектов
+
 const createObj = (howMany) => {
-  let arrOfObj = [];
-  for (let i = 0; i < howMany; i++) {
-    arrOfObj.push({
-      firstName: arrFirstNames[randInt(arrFirstNames.length)],
-      lastName: arrlastNames[randInt(arrlastNames.length)],
-      position: arrOfPositions[randInt(arrOfPositions.length)],
-      age: randInt(60),
-    });
-  }
-  return arrOfObj;
+  return {
+    firstName: arrFirstNames[randInt(arrFirstNames.length)],
+    lastName: arrLastNames[randInt(arrLastNames.length)],
+    position: arrOfPositions[randInt(arrOfPositions.length)],
+    age: randInt(60),
+  };
 };
 
 // Финал № 2 | The final № 2
 
-const createArrOfObj2 = (howMany) => createObj(howMany);
+const createArrOfObj2 = (howMany) => {
+  let arrOfObj = [];
+  for (let i = 0; i < howMany; i++) {
+    arrOfObj.push(createObj(howMany));
+  }
+  return arrOfObj;
+};
 
-console.log(createArrOfObj2(5));
+console.log(createArrOfObj2(3));
 
 // Вывести итоговые результаты в таблицу на странице
