@@ -187,7 +187,7 @@ const arrOfPositions = [
 
 // вынести в отдельную функцию создание обьектов
 
-const createObj = (howMany) => {
+const createObj = () => {
   return {
     firstName: arrFirstNames[randInt(arrFirstNames.length)],
     lastName: arrLastNames[randInt(arrLastNames.length)],
@@ -206,6 +206,16 @@ const createArrOfObj2 = (howMany) => {
   return arrOfObj;
 };
 
-console.log(createArrOfObj2(3));
+// console.log(createArrOfObj2(1));
 
 // Вывести итоговые результаты в таблицу на странице
+
+// Подзадачи/Декомпозиция
+
+// ввести одного сотрудника/персону в тэг <p> и отобразить на странице. 
+// как через js обратиться к классу?
+
+document.querySelector('.container').innerHTML = `<table class = 'employees'></table>`;
+for(item in arrFirstNames) {
+    
+}
