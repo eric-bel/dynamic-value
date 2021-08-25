@@ -206,7 +206,7 @@ const createArrOfObj2 = (howMany) => {
   return arrOfObj;
 };
 
-// console.log(createArrOfObj2(1));
+console.log(createArrOfObj2(4));
 
 // Вывести итоговые результаты в таблицу на странице
 
@@ -215,7 +215,3 @@ const createArrOfObj2 = (howMany) => {
 // ввести одного сотрудника/персону в тэг <p> и отобразить на странице. 
 // как через js обратиться к классу?
 
-document.querySelector('.container').innerHTML = `<table class = 'employees'></table>`;
-for(item in arrFirstNames) {
-    
-}
