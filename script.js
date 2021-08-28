@@ -216,3 +216,5 @@ console.log(createArrOfObj2(4));
 // как через js обратиться к классу?
 
 // tags are looped through
+
+// tags are iterated over other loops
