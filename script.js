@@ -218,3 +218,5 @@ console.log(createArrOfObj2(4));
 // tags are looped through
 
 // tags are iterated over other loops
+
+// enumeration of combinations
