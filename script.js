@@ -208,11 +208,16 @@ const createArrOfObj2 = (howMany) => {
 
 console.log(createArrOfObj2(4));
 
+let result = createArrOfObj2(4);
+console.log(result[1].age);
+
+document.write(result);
+
 // Вывести итоговые результаты в таблицу на странице
 
 // Подзадачи/Декомпозиция
 
-// ввести одного сотрудника/персону в тэг <p> и отобразить на странице. 
+// ввести одного сотрудника/персону в тэг <p> и отобразить на странице.
 // как через js обратиться к классу?
 
 // tags are looped through
@@ -222,3 +227,17 @@ console.log(createArrOfObj2(4));
 // enumeration of combinations
 
 // через document.write
+
+let dayName = {
+  1: 'понедельник',
+  2: 'вторник',
+  3: 'среда',
+  4: 'четверг',
+  5: 'пятница',
+  6: 'суббота',
+  7: 'воскресенье',
+};
+
+let day = 2;
+
+console.log(dayName[2]) // "Вторник"
