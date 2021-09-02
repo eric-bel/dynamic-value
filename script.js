@@ -241,3 +241,5 @@ let dayName = {
 let day = 2;
 
 console.log(dayName[2]) // "Вторник"
+
+// Object transformation 2
