@@ -216,30 +216,10 @@ document.write(result);
 // Вывести итоговые результаты в таблицу на странице
 
 // Подзадачи/Декомпозиция
-
 // ввести одного сотрудника/персону в тэг <p> и отобразить на странице.
 // как через js обратиться к классу?
-
 // tags are looped through
-
 // tags are iterated over other loops
-
 // enumeration of combinations
-
 // через document.write
 
-let dayName = {
-  1: 'понедельник',
-  2: 'вторник',
-  3: 'среда',
-  4: 'четверг',
-  5: 'пятница',
-  6: 'суббота',
-  7: 'воскресенье',
-};
-
-let day = 2;
-
-console.log(dayName[2]) // "Вторник"
-
-// Object transformation 1
