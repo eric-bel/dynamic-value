@@ -44,7 +44,7 @@ let objRandom = {
 //  Итог/Финал: Сгенерировать массив объектов. Свойства объектов должны ииметь рандомные значения.
 
 let arrOfNames = ["Alex", "John", "April", "Sarah", "Elton", "Jessica", "Max"];
-let arrOfAges = [23, 54, 12, 32, 45, 65, 32, 21, 34];
+let arrOfAges = [23, 54, 12, 32, 45, 65, 32, 21, 34, 43, 27, 34, 10, 22, 21, 28, 30, 12, 32, 45, 65, 32, 21, 34, 43, 27];
 
 function createArrOfObj(numOfObj) {
   let arrOfObj = [];
@@ -206,20 +206,30 @@ const createArrOfObj2 = (howMany) => {
   return arrOfObj;
 };
 
-console.log(createArrOfObj2(4));
+// console.log(createArrOfObj2(4));
 
-let result = createArrOfObj2(4);
-console.log(result[1].age);
-
-document.write(result);
+let result = createArrOfObj2(1);
+// console.log(result[0].firstName);
 
 // Вывести итоговые результаты в таблицу на странице
 
-// Подзадачи/Декомпозиция
-// ввести одного сотрудника/персону в тэг <p> и отобразить на странице.
-// как через js обратиться к классу?
-// tags are looped through
-// tags are iterated over other loops
-// enumeration of combinations
-// через document.write
-
+function writeInTable(num) {
+  const tbody = document.querySelector("tbody");
+  for (let i = 0; i < num; i++) {
+    const tr = document.createElement("tr");
+    tbody.appendChild(tr);
+    const td = document.createElement("td");
+    tr.appendChild(td);
+    td.innerText = arrFirstNames[i];
+    const td1 = document.createElement("td");
+    tr.appendChild(td1);
+    td1.innerText = arrLastNames[i];
+    const td3 = document.createElement("td");
+    tr.appendChild(td3);
+    td3.innerText = arrOfPositions[i];
+    const td4 = document.createElement("td");
+    tr.appendChild(td4);
+    td4.innerText = arrOfAges[i];
+  }
+}
+console.log(writeInTable(8));
