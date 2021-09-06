@@ -19,4 +19,9 @@ td {
   text-align: center;
   font-family: monospace;
   font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tbody2 {
+    margin-top: 20px;
 }

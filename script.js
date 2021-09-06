@@ -44,7 +44,10 @@ let objRandom = {
 //  Итог/Финал: Сгенерировать массив объектов. Свойства объектов должны ииметь рандомные значения.
 
 let arrOfNames = ["Alex", "John", "April", "Sarah", "Elton", "Jessica", "Max"];
-let arrOfAges = [23, 54, 12, 32, 45, 65, 32, 21, 34, 43, 27, 34, 10, 22, 21, 28, 30, 12, 32, 45, 65, 32, 21, 34, 43, 27];
+let arrOfAges = [
+  23, 54, 12, 32, 45, 65, 32, 21, 34, 43, 27, 34, 10, 22, 21, 28, 30, 12, 32,
+  45, 65, 32, 21, 34, 43, 27,
+];
 
 function createArrOfObj(numOfObj) {
   let arrOfObj = [];
@@ -208,11 +211,12 @@ const createArrOfObj2 = (howMany) => {
 
 // console.log(createArrOfObj2(4));
 
-let result = createArrOfObj2(1);
+let result = createArrOfObj2(20);
+console.log(result);
 // console.log(result[0].firstName);
 
 // Вывести итоговые результаты в таблицу на странице
-
+// Первый вариант выведения в таблицу с num в параметрах функции
 function writeInTable(num) {
   const tbody = document.querySelector("tbody");
   for (let i = 0; i < num; i++) {
@@ -232,4 +236,28 @@ function writeInTable(num) {
     td4.innerText = arrOfAges[i];
   }
 }
-console.log(writeInTable(8));
+writeInTable(1);
+
+// Функция принимает массив объектов и выводит свойства объекта в таблицу
+// вывести массив с одним объектом
+function addRowInTable2(arr) {
+  const tbody2 = document.querySelector(".tbody2");
+  for (let i = 0; i < arr.length; i++) {
+    const tRow = document.createElement("tr");
+    tbody2.appendChild(tRow);
+    const tData = document.createElement("td");
+    tRow.appendChild(tData);
+    tData.innerText = result[i].firstName;
+    const tDataLastName = document.createElement("td");
+    tRow.appendChild(tDataLastName);
+    tDataLastName.innerText = result[i].lastName;
+    const tDataPos = document.createElement("td");
+    tRow.appendChild(tDataPos);
+    tDataPos.innerText = result[i].position;
+    const tDataAge = document.createElement("td");
+    tRow.appendChild(tDataAge);
+    tDataAge.innerText = result[i].age;
+    console.log(tbody2);
+  }
+}
+addRowInTable2(result);
